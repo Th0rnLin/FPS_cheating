@@ -1,6 +1,6 @@
 import win32gui
 import pyscreenshot
-import pyautogui
+import autoit
 import sys
 import cv2
 import os
@@ -17,8 +17,8 @@ def save_screen_grab():
     img = pyscreenshot.grab()
     img.save('./image.png')
 
-def move_and_click(x, y, t=2):
-    pyautogui.click(x=x, y=y, duration=0.1, clicks=t, interval=0.1)
+def move_and_click(x, y, t=2, s=0):
+    autoit.mouse_click('left', x, y, clicks=t, speed=s)
 
 def openpose(image_name="./image.png"):
     try:
