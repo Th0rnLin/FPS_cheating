@@ -4,7 +4,7 @@ from pynput import keyboard
 def on_press(key):
     try:
         print('key {0} press'.format(key.char))
-        if key.char=='1':
+        if key.char=='c':
             save_screen_grab()
             test_image = './image.png'
             coorindate=openpose(test_image)
